@@ -47,7 +47,7 @@ class App extends Component {
 
   searchPosts(text) {
     let encode = encodeURI(text);
-    axios.get(`https://practiceapi.devmountain.com/api/posts/filter`, {encode}).then(res => {
+    axios.get(`https://practiceapi.devmountain.com/api/posts/filter`, {"text": encode}).then(res => {
       this.setState({posts: res.data});
     }).catch(console.log);
   }
